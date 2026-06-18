@@ -95,7 +95,11 @@ auto-generate from `siteConfig.url`. **When you add a route, add it to
 ## Conventions
 
 - TypeScript strict mode; path alias `@/*` → `src/*`.
-- Tailwind brand color is the `brand` indigo scale (`tailwind.config.ts`).
+- Design system (`tailwind.config.ts`): `brand` = deep ink indigo-navy (primary);
+  `accent` = warm gold, the **signature** color — spend it only on money moments
+  (invoice Total, the paper's top rule, small marks), never as a general UI color.
+  Display face is Space Grotesk via `font-display` (headings + "INVOICE" wordmark);
+  Inter is body. Keep this restraint — the brief is Stripe/Linear-grade, not maximalist.
 - Add `"use client"` only to components that need interactivity; default to
   server components.
 - Currency formatting goes through `lib/currency.ts` (`formatMoney`), which

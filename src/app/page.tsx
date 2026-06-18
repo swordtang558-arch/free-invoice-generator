@@ -1,7 +1,6 @@
 import {
   FileText,
   ShieldCheck,
-  Sparkles,
   Download,
   ListChecks,
   PencilLine,
@@ -82,20 +81,20 @@ export default function HomePage() {
 
       {/* Hero (concise — the tool is the hero) */}
       <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6 sm:py-14">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700">
-            <Sparkles className="h-3.5 w-3.5" aria-hidden />
-            100% free · No sign up · No watermark
+        <div className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6 sm:py-16">
+          <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-600">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden />
+            Free · No sign up · No watermark
           </span>
-          <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Free Invoice Generator
+          <h1 className="mx-auto mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-brand-900 sm:text-5xl">
+            The free invoice generator that gets you paid.
           </h1>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600 sm:text-lg">
-            Create and download professional invoices in seconds — no sign up,
-            no watermark, 100% free.
+          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 sm:text-lg">
+            Create and download a professional invoice PDF in seconds — no sign
+            up, no watermark, 100% free.
           </p>
-          <p className="mx-auto mt-3 inline-flex items-center gap-1.5 text-sm text-slate-500">
-            <ShieldCheck className="h-4 w-4 text-emerald-600" aria-hidden />
+          <p className="mx-auto mt-4 inline-flex items-center gap-1.5 text-sm text-slate-500">
+            <ShieldCheck className="h-4 w-4 text-accent-600" aria-hidden />
             Everything runs in your browser. Your data never leaves your device.
           </p>
         </div>
@@ -117,7 +116,7 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-brand-900 sm:text-3xl">
               How to create an invoice in 3 steps
             </h2>
             <p className="mt-2 text-slate-600">
@@ -150,7 +149,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <div className="grid gap-10 md:grid-cols-2 md:items-start">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+              <h2 className="font-display text-2xl font-bold tracking-tight text-brand-900 sm:text-3xl">
                 What to include in a professional invoice
               </h2>
               <p className="mt-3 text-slate-600">
@@ -193,7 +192,7 @@ export default function HomePage() {
       <section id="faq" className="scroll-mt-20 border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <div className="mx-auto mb-8 max-w-2xl text-center">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-brand-900 sm:text-3xl">
               Frequently asked questions
             </h2>
             <p className="mt-2 text-slate-600">

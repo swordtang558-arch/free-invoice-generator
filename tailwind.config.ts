@@ -8,26 +8,42 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Restrained, finance-grade brand palette (deep indigo).
+        // Primary "ink" — a deep, confident indigo-navy. Deliberately deeper
+        // and less neon than the default SaaS #4f46e5 so it reads as a serious
+        // financial tool rather than a templated startup.
         brand: {
-          50: "#eef2ff",
-          100: "#e0e7ff",
-          200: "#c7d2fe",
-          300: "#a5b4fc",
-          400: "#818cf8",
-          500: "#6366f1",
-          600: "#4f46e5",
-          700: "#4338ca",
-          800: "#3730a3",
-          900: "#312e81",
-          950: "#1e1b4b",
+          50: "#eef1fb",
+          100: "#dde3f7",
+          200: "#c0cbee",
+          300: "#97a6e0",
+          400: "#6b7ed0",
+          500: "#4a5cbf",
+          600: "#3a47a3",
+          700: "#2f3a85",
+          800: "#28316a",
+          900: "#212a54",
+          950: "#151a36",
+        },
+        // Signature accent — a restrained warm gold. Money/value signal, used
+        // only on the figures and rules that matter (Total, hairlines, marks).
+        accent: {
+          50: "#faf4e4",
+          100: "#f3e6c4",
+          200: "#e7cd8c",
+          300: "#dab455",
+          400: "#cc9d34",
+          500: "#c79134",
+          600: "#a8771f",
+          700: "#825c18",
         },
       },
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-sans)", "sans-serif"],
       },
       boxShadow: {
-        card: "0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04)",
+        card: "0 1px 3px rgba(21, 26, 54, 0.07), 0 1px 2px rgba(21, 26, 54, 0.04)",
+        lift: "0 10px 30px -12px rgba(21, 26, 54, 0.25)",
       },
     },
   },

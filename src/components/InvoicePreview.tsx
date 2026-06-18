@@ -48,7 +48,7 @@ const InvoicePreview = forwardRef<HTMLDivElement, Props>(function InvoicePreview
   return (
     <div
       ref={ref}
-      className="invoice-paper mx-auto p-[14mm] font-sans text-[12px] leading-relaxed text-slate-800"
+      className="invoice-paper mx-auto border-t-[3px] border-accent-500 p-[14mm] font-sans text-[12px] leading-relaxed text-slate-800"
     >
       {/* Header */}
       <div className="flex items-start justify-between gap-6">
@@ -77,10 +77,10 @@ const InvoicePreview = forwardRef<HTMLDivElement, Props>(function InvoicePreview
         </div>
 
         <div className="text-right">
-          <h2 className="text-2xl font-bold uppercase tracking-tight text-brand-700">
+          <h2 className="font-display text-2xl font-bold uppercase tracking-[0.12em] text-brand-700">
             Invoice
           </h2>
-          <p className="mt-1 text-[11px] text-slate-500">
+          <p className="mt-1 text-[11px] font-medium tracking-wide text-accent-600">
             #{data.invoiceNumber || "—"}
           </p>
         </div>
@@ -187,9 +187,11 @@ const InvoicePreview = forwardRef<HTMLDivElement, Props>(function InvoicePreview
               </span>
             </div>
           )}
-          <div className="mt-2 flex justify-between border-t-2 border-slate-200 pt-2">
-            <span className="text-sm font-bold text-slate-900">Total</span>
-            <span className="text-sm font-bold tabular-nums text-brand-700">
+          <div className="mt-2 flex items-baseline justify-between border-t-2 border-brand-900 pt-2">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+              Total
+            </span>
+            <span className="font-display text-lg font-bold tabular-nums text-accent-600">
               {formatMoney(totals.total, data.currency)}
             </span>
           </div>
