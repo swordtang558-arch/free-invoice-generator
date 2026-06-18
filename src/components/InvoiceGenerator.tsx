@@ -150,7 +150,7 @@ export default function InvoiceGenerator() {
 
           {/* Preview viewport — scrollable scaled paper */}
           <div
-            className={`${
+            className={`invoice-print-area ${
               showPreviewMobile ? "block" : "hidden"
             } overflow-auto rounded-xl border border-slate-200 bg-slate-100 p-3 lg:block lg:max-h-[80vh]`}
           >

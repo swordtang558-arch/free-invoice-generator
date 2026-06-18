@@ -80,7 +80,7 @@ export default function HomePage() {
       <JsonLd data={faqLd} />
 
       {/* Hero (concise — the tool is the hero) */}
-      <section className="border-b border-slate-200 bg-white">
+      <section className="no-print border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6 sm:py-16">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-600">
             <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden />
@@ -112,7 +112,7 @@ export default function HomePage() {
       {/* How it works */}
       <section
         id="how-it-works"
-        className="scroll-mt-20 border-t border-slate-200 bg-white"
+        className="no-print scroll-mt-20 border-t border-slate-200 bg-white"
       >
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <div className="mx-auto max-w-2xl text-center">
@@ -145,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* What to include */}
-      <section className="border-t border-slate-200">
+      <section className="no-print border-t border-slate-200">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <div className="grid gap-10 md:grid-cols-2 md:items-start">
             <div>
@@ -189,7 +189,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="scroll-mt-20 border-t border-slate-200 bg-white">
+      <section id="faq" className="no-print scroll-mt-20 border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <div className="mx-auto mb-8 max-w-2xl text-center">
             <h2 className="font-display text-2xl font-bold tracking-tight text-brand-900 sm:text-3xl">

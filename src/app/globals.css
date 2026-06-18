@@ -25,7 +25,10 @@ body {
   box-sizing: border-box;
 }
 
-/* Print styles: hide the app chrome, show only the invoice. */
+/* Print styles: hide the app chrome and marketing content, show only the
+   invoice. Marketing sections carry .no-print; the preview viewport carries
+   .invoice-print-area and is neutralised here so the A4 paper prints full-size
+   and unclipped (even if it was collapsed on mobile). */
 @media print {
   body {
     background: #ffffff;
@@ -33,9 +36,13 @@ body {
   .no-print {
     display: none !important;
   }
-  .print-only-paper,
-  .print-only-paper * {
-    visibility: visible;
+  .invoice-print-area {
+    display: block !important;
+    overflow: visible !important;
+    max-height: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
   }
   .invoice-paper {
     width: 100%;
