@@ -25,20 +25,23 @@ export default function Footer() {
             <Link className="hover:text-slate-900" href="/">
               Invoice Generator
             </Link>
+            <Link className="hover:text-slate-900" href="/freelancer-invoice">
+              Freelancer invoice
+            </Link>
+            <Link className="hover:text-slate-900" href="/contractor-invoice">
+              Contractor invoice
+            </Link>
             <Link className="hover:text-slate-900" href="/about">
               About
+            </Link>
+            <Link className="hover:text-slate-900" href="/#faq">
+              FAQ
             </Link>
             <Link className="hover:text-slate-900" href="/privacy">
               Privacy
             </Link>
             <Link className="hover:text-slate-900" href="/terms">
               Terms
-            </Link>
-            <Link className="hover:text-slate-900" href="/#faq">
-              FAQ
-            </Link>
-            <Link className="hover:text-slate-900" href="/#how-it-works">
-              How it works
             </Link>
           </nav>
         </div>

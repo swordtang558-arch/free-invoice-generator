@@ -3,12 +3,14 @@ import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  // Phase 1 routes. Phase 2 long-tail / blog pages get added here as they ship.
-  const routes = ["", "/about", "/privacy", "/terms"];
+  // Long-tail landing pages rank for their own audience and carry higher
+  // priority than the legal/about pages.
+  const landing = ["/freelancer-invoice", "/contractor-invoice"];
+  const routes = ["", ...landing, "/about", "/privacy", "/terms"];
   return routes.map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: now,
     changeFrequency: path === "" ? "weekly" : "monthly",
-    priority: path === "" ? 1 : 0.6,
+    priority: path === "" ? 1 : landing.includes(path) ? 0.8 : 0.6,
   }));
 }

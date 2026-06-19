@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   FileText,
   ShieldCheck,
@@ -154,10 +155,23 @@ export default function HomePage() {
               </h2>
               <p className="mt-3 text-slate-600">
                 A clear, complete invoice gets you paid faster and looks
-                professional to your clients. Whether you’re a freelancer, a
-                small business, or a contractor, every invoice should contain a
-                few essential pieces of information. Our free invoice generator
-                builds all of this for you automatically.
+                professional to your clients. Whether you’re a{" "}
+                <Link
+                  href="/freelancer-invoice"
+                  className="font-medium text-brand-700 underline-offset-2 hover:underline"
+                >
+                  freelancer
+                </Link>
+                , a small business, or a{" "}
+                <Link
+                  href="/contractor-invoice"
+                  className="font-medium text-brand-700 underline-offset-2 hover:underline"
+                >
+                  contractor
+                </Link>
+                , every invoice should contain a few essential pieces of
+                information. Our free invoice generator builds all of this for
+                you automatically.
               </p>
               <p className="mt-3 text-slate-600">
                 Once you’ve filled in the form, you can{" "}
