@@ -14,6 +14,7 @@ import type { InvoiceData } from "@/lib/types";
 import { createDefaultInvoice } from "@/lib/defaults";
 import { clearDraft, loadDraft, saveDraft } from "@/lib/storage";
 import { buildFilename } from "@/lib/pdf";
+import { TEMPLATES, isTemplateId } from "@/lib/templates";
 import InvoiceForm from "./InvoiceForm";
 import InvoicePreview from "./InvoicePreview";
 import PdfExportButton from "./PdfExportButton";
@@ -26,9 +27,12 @@ export default function InvoiceGenerator() {
   const [showPreviewMobile, setShowPreviewMobile] = useState(false);
   const previewRef = useRef<HTMLDivElement>(null);
 
-  // Restore draft (or seed defaults) once, on the client only.
+  // Restore draft (or seed defaults) once, on the client only. A ?template=
+  // deep link (e.g. from the gallery) overrides the template on load.
   useEffect(() => {
-    setData(loadDraft() ?? createDefaultInvoice());
+    const base = loadDraft() ?? createDefaultInvoice();
+    const requested = new URLSearchParams(window.location.search).get("template");
+    setData(isTemplateId(requested) ? { ...base, template: requested } : base);
   }, []);
 
   // Debounced autosave on every change.
@@ -127,6 +131,33 @@ export default function InvoiceGenerator() {
               <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" aria-hidden />
               No watermark · No sign up · Your data never leaves your browser.
             </p>
+
+            {/* Template switcher */}
+            <div className="mt-4 border-t border-slate-100 pt-3">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-xs font-medium text-slate-500">
+                  Template
+                </span>
+                <div className="inline-flex rounded-lg border border-slate-200 p-0.5">
+                  {TEMPLATES.map((t) => (
+                    <button
+                      key={t.id}
+                      type="button"
+                      onClick={() => patch({ template: t.id })}
+                      aria-pressed={data.template === t.id}
+                      title={t.description}
+                      className={`rounded-md px-3 py-1.5 text-xs font-medium transition ${
+                        data.template === t.id
+                          ? "bg-brand-600 text-white shadow-sm"
+                          : "text-slate-600 hover:bg-slate-100"
+                      }`}
+                    >
+                      {t.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Mobile preview toggle */}

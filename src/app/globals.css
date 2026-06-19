@@ -83,6 +83,17 @@ body {
   }
 }
 
+/* Thumbnail scale for the /invoice-templates gallery (zoom reflows layout so
+   the card collapses to the scaled size). */
+.invoice-thumb {
+  zoom: 0.4;
+}
+@media (min-width: 640px) {
+  .invoice-thumb {
+    zoom: 0.46;
+  }
+}
+
 /* Lightweight prose styles for text pages (about / privacy / terms). */
 .prose-page h2 {
   @apply mt-8 text-lg font-semibold text-slate-900;

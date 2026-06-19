@@ -27,6 +27,7 @@ function plusDaysISO(days: number): string {
 /** A friendly starter invoice so the preview never looks empty. */
 export function createDefaultInvoice(): InvoiceData {
   return {
+    template: "classic",
     logo: null,
     from: {
       name: "Your Company LLC",

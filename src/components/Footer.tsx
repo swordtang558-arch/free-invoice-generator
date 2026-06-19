@@ -25,6 +25,9 @@ export default function Footer() {
             <Link className="hover:text-slate-900" href="/">
               Invoice Generator
             </Link>
+            <Link className="hover:text-slate-900" href="/invoice-templates">
+              Templates
+            </Link>
             <Link className="hover:text-slate-900" href="/freelancer-invoice">
               Freelancer invoice
             </Link>

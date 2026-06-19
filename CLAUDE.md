@@ -56,12 +56,16 @@ tool is client-side.**
   `useState` value.
 
 **The preview IS the PDF.** `components/InvoicePreview.tsx` (a `forwardRef`
-component) is the single source of truth for how the downloaded PDF looks.
-`lib/pdf.ts` uses `html2pdf.js` (html2canvas + jsPDF) to render that exact DOM
-node — passed up via the ref — at `scale: 2`. **To change the PDF, change the
-preview.** `html2pdf.js` is imported dynamically (client-only) so it never enters
-the server bundle, and has a hand-written type declaration at
-`src/types/html2pdf.d.ts` (no official `@types`).
+component) owns the `.invoice-paper` wrapper that PDF export and print styles
+target via the ref, and **dispatches the visual layout to a template** in
+`components/templates/` (`ClassicTemplate` / `ModernTemplate` / `MinimalTemplate`)
+based on `data.template`. The chosen template is the source of truth for how that
+invoice looks and exports. `lib/pdf.ts` uses `html2pdf.js` (html2canvas + jsPDF)
+to render that exact DOM node at `scale: 2`. **To change a template's look, edit
+its component; to add a template, add it to `lib/templates.ts` + a component +
+the dispatch in `InvoicePreview`.** `html2pdf.js` is imported dynamically
+(client-only) so it never enters the server bundle, and has a hand-written type
+declaration at `src/types/html2pdf.d.ts` (no official `@types`).
 
 **Preview scaling uses CSS `zoom`, not `transform: scale`** (see
 `.invoice-preview-scale` in `app/globals.css`). This is intentional: `zoom`

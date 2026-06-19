@@ -1,5 +1,7 @@
 // Central type definitions for the invoice domain.
 
+import type { TemplateId } from "./templates";
+
 export interface Party {
   /** Company or person name. */
   name: string;
@@ -19,6 +21,9 @@ export interface LineItem {
 export type AmountMode = "percent" | "fixed";
 
 export interface InvoiceData {
+  /** Visual template the invoice renders / exports with. */
+  template: TemplateId;
+
   /** Logo as a base64 data URL (read locally, never uploaded). */
   logo: string | null;
 
