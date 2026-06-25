@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <PageShell
+      breadcrumb={{ name: "About", href: "/about" }}
       title="About this invoice generator"
       intro="A simple, private, genuinely free way to invoice your clients."
     >

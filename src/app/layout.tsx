@@ -29,16 +29,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  keywords: [
-    "free invoice generator",
-    "create invoice online",
-    "invoice maker",
-    "invoice template",
-    "download invoice pdf",
-    "no sign up invoice",
-    "freelancer invoice",
-    "contractor invoice",
-  ],
+  // No `keywords` meta — search engines ignore it and it reads as keyword stuffing.
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

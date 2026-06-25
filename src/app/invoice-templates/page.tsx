@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import InvoicePreview from "@/components/InvoicePreview";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { TEMPLATES } from "@/lib/templates";
 import type { InvoiceData } from "@/lib/types";
 
@@ -51,7 +52,13 @@ const SAMPLE: InvoiceData = {
 export default function InvoiceTemplatesPage() {
   return (
     <>
-      <section className="border-b border-slate-200 bg-white">
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Invoice templates", href: "/invoice-templates" },
+        ]}
+      />
+      <section className="border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-5xl px-4 py-14 text-center sm:px-6 sm:py-16">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-600">
             <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden />

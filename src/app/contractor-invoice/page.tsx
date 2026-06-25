@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 export default function ContractorInvoicePage() {
   return (
     <LandingPage
+      breadcrumb={{ name: "Contractor invoice", href: "/contractor-invoice" }}
       eyebrow="For contractors & trades"
       title="Free contractor invoice generator"
       intro="Whether you run a one-person trade or a small crew, billing should be the easy part of the job. Create a professional contractor invoice for labor, materials, and milestones, add tax, and download a clean PDF on site or at the office — free, private, no sign up."

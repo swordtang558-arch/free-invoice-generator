@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <PageShell
+      breadcrumb={{ name: "Privacy", href: "/privacy" }}
       title="Privacy Policy"
       intro="Short version: your invoice data never leaves your browser."
     >

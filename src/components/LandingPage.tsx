@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Check, FileText } from "lucide-react";
+import Breadcrumbs, { type Crumb } from "./Breadcrumbs";
 
 // Presentational layout shared by the long-tail landing pages
 // (/freelancer-invoice, /contractor-invoice). Content is passed in per page so
@@ -16,6 +17,8 @@ export interface RelatedLink {
 }
 
 export interface LandingPageProps {
+  /** The current page's breadcrumb (Home is prepended automatically). */
+  breadcrumb: Crumb;
   eyebrow: string;
   title: string;
   intro: string;
@@ -38,6 +41,7 @@ function Cta({ label = "Create your invoice" }: { label?: string }) {
 }
 
 export default function LandingPage({
+  breadcrumb,
   eyebrow,
   title,
   intro,
@@ -48,8 +52,10 @@ export default function LandingPage({
 }: LandingPageProps) {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, breadcrumb]} />
+
       {/* Hero */}
-      <section className="border-b border-slate-200 bg-white">
+      <section className="border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-16">
           <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-600">
             <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden />

@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 export default function FreelancerInvoicePage() {
   return (
     <LandingPage
+      breadcrumb={{ name: "Freelancer invoice", href: "/freelancer-invoice" }}
       eyebrow="For freelancers"
       title="Free invoice generator built for freelancers"
       intro="Stop fighting word processor templates every time a project wraps. Create a polished freelancer invoice, bill by the hour or by the project, and download a clean PDF in under a minute — free, private, and without a single watermark."

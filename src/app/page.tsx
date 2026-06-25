@@ -5,6 +5,7 @@ import {
   Download,
   ListChecks,
   PencilLine,
+  ArrowUpRight,
 } from "lucide-react";
 import InvoiceGenerator from "@/components/InvoiceGenerator";
 import Faq from "@/components/Faq";
@@ -109,6 +110,62 @@ export default function HomePage() {
       </section>
 
       <AdSlot label="Below invoice tool" />
+
+      {/* Explore — categorized internal links (passes authority from the home
+          page to templates + audience landing pages with keyword-rich anchors). */}
+      <section className="no-print border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-brand-900 sm:text-3xl">
+              Explore invoice templates & guides
+            </h2>
+            <p className="mt-2 text-slate-600">
+              Pick a design or find a guide built for the way you work.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                href: "/invoice-templates",
+                title: "Invoice templates",
+                body: "Browse Classic, Modern, and Minimal invoice templates and start from the style you like.",
+              },
+              {
+                href: "/freelancer-invoice",
+                title: "Freelancer invoices",
+                body: "A free invoice generator built for freelancers — bill by the hour or by the project.",
+              },
+              {
+                href: "/contractor-invoice",
+                title: "Contractor invoices",
+                body: "Invoice for labor, materials, and milestones as a contractor or tradesperson.",
+              },
+            ].map((card) => (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="group flex flex-col rounded-xl border border-slate-200 p-6 shadow-card transition hover:border-brand-300 hover:shadow-lift"
+              >
+                <span className="flex items-center justify-between">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                    <FileText className="h-5 w-5" aria-hidden />
+                  </span>
+                  <ArrowUpRight
+                    className="h-5 w-5 text-slate-300 transition group-hover:text-brand-600"
+                    aria-hidden
+                  />
+                </span>
+                <h3 className="mt-4 text-base font-semibold text-brand-900">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  {card.body}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* How it works */}
       <section

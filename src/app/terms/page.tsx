@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <PageShell
+      breadcrumb={{ name: "Terms", href: "/terms" }}
       title="Terms of Use"
       intro="Plain-English terms for using this free tool."
     >
